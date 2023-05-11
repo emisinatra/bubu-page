@@ -1,11 +1,58 @@
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Head from "next/head";
+import { useState } from "react";
 
 export default function Home() {
+  const [formState, setFormState] = useState({
+    nombre: "",
+    _replyto: "",
+    mensaje: "",
+  });
+
+  const handleInputChange = (e: any) => {
+    setFormState({
+      ...formState,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch("https://formspree.io/f/xqkojewa", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formState),
+      });
+
+      if (response.ok) {
+        toast.success("Tu mensaje ha sido enviado correctamente!");
+        setFormState({
+          nombre: "",
+          _replyto: "",
+          mensaje: "",
+        });
+      } else {
+        toast.error(
+          "Hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo."
+        );
+      }
+    } catch (error) {
+      toast.error(
+        "Hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo."
+      );
+    }
+  };
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 text-gray-900">
       <Head>
-        <title>Mi sitio web</title>
+        <title>Bubú Solutions</title>
         <meta name="description" content="Sitio web en construcción" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -26,16 +73,14 @@ export default function Home() {
           </h2>
 
           <div className="w-full max-w-md p-4 mx-auto border border-gray-300 rounded-md">
-            <form
-              action="https://formspree.io/f/xqkojewa"
-              method="POST"
-              data-netlify-recaptcha="true"
-            >
+            <form onSubmit={handleSubmit}>
               <input
                 type="text"
                 name="nombre"
                 placeholder="Tu nombre"
                 required
+                onChange={handleInputChange}
+                value={formState.nombre}
                 className="w-full px-4 py-2 mb-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
               />
               <input
@@ -43,12 +88,16 @@ export default function Home() {
                 name="_replyto"
                 placeholder="Tu correo electrónico"
                 required
+                onChange={handleInputChange}
+                value={formState._replyto}
                 className="w-full px-4 py-2 mb-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
               />
               <textarea
                 name="mensaje"
                 placeholder="Tu mensaje"
                 required
+                onChange={handleInputChange}
+                value={formState.mensaje}
                 className="w-full px-4 py-2 mb-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
               ></textarea>
               <button
