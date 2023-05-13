@@ -22,6 +22,7 @@
     "react-icons": "^4.8.0",
     "react-spinners": "^0.13.8",
     "react-toastify": "^9.1.2",
+    "react-type-animation": "^3.0.1",
     "tailwindcss": "3.3.2",
     "typescript": "5.0.4",
     "vercel": "^29.3.0"

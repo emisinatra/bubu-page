@@ -1,3 +1,7 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "at-rule-no-unknown": null,
+    "scss/at-rule-no-unknown": true
+  }
 }

@@ -4,6 +4,8 @@ import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { toast } from "react-toastify";
 // Importando los estilos de "react-toastify"
 import "react-toastify/dist/ReactToastify.css";
+// Importando libreria para animacion de typing
+import { TypeAnimation } from "react-type-animation";
 // Importando el componente Head de Next.js para modificar el encabezado del documento HTML
 import Head from "next/head";
 //Importando componente para animacion de carga
@@ -74,78 +76,105 @@ export default function Home() {
 
   // Jsx con los estilos
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 text-gray-900">
+    <div
+      className="flex flex-col justify-between min-h-screen text-black"
+      style={{
+        backgroundImage: `url(/background.jpg)`,
+        backgroundSize: "cover",
+      }}
+    >
       <Head>
         <title>Bubú Solutions</title>
         <meta name="description" content="Sitio web en construcción" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex-grow p-4 text-center">
-        <h1 className="text-4xl font-bold">
-          Bienvenido a <span className="text-blue-600">Bubú Solutions</span>
-        </h1>
+      <div className="ml-32 ">
+        <main className="flex-grow p-4 text-left">
+          <h1 className="mt-4 text-9xl">bubú</h1>
+          <TypeAnimation
+            sequence={[
+              "Esta llegando...",
+              2000,
+              () => {
+                console.log("Sequence completed");
+              },
+            ]}
+            wrapper="h1"
+            className=" ml-1 text-pink-600 font-bold text-4xl"
+            cursor={true}
+            repeat={Infinity}
+            style={{ display: "inline-block" }}
+          />
 
-        <p className="mt-4 text-xl">
-          Sitio web en construcción. ¡Pronto veras todo lo que tenemos para vos!
-        </p>
+          <section className="mt-8">
+            <h2
+              className=" ml-44
+             text-base "
+            >
+              Para más información{" "}
+              <span className="text-black font-bold"> contactate.</span>
+            </h2>
 
-        <section className="mt-8">
-          <h2 className="mb-4 text-lg font-semibold">
-            Para contactarnos y obtener alguno de nuestros servicios, ¡llena
-            este formulario!
-          </h2>
+            <div className=" ml-20 w-full max-w-md p-4  shadow rounded-md bg-transparent border border-pink-600">
+              <form onSubmit={handleSubmit}>
+                <label className="block text-left">
+                  Tu mail
+                  <input
+                    type="text"
+                    name="nombre"
+                    required
+                    onChange={handleInputChange}
+                    value={formState.nombre}
+                    className="mt-1 block w-full px-4 py-2 mb-4 border border-pink-600 rounded-md focus:outline-none focus:ring-2  bg-transparent"
+                  />
+                </label>
 
-          <div className="w-full max-w-md p-4 mx-auto border border-gray-300 rounded-md shadow-lg">
-            <form onSubmit={handleSubmit}>
-              <label className="block text-left">
-                <span className="text-gray-700">Tu nombre</span>
-                <input
-                  type="text"
-                  name="nombre"
-                  required
-                  onChange={handleInputChange}
-                  value={formState.nombre}
-                  className="mt-1 block w-full px-4 py-2 mb-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
-                />
-              </label>
-              <label className="block text-left">
-                <span className="text-gray-700">Tu correo electrónico</span>
-                <input
-                  type="email"
-                  name="_replyto"
-                  required
-                  onChange={handleInputChange}
-                  value={formState._replyto}
-                  className="mt-1 block w-full px-4 py-2 mb-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
-                />
-              </label>
-              <label className="block text-left">
-                <span className="text-gray-700">Tu mensaje</span>
-                <textarea
-                  name="mensaje"
-                  required
-                  onChange={handleInputChange}
-                  value={formState.mensaje}
-                  className="mt-1 block w-full px-4 py-2 mb-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
-                ></textarea>
-              </label>
-              <button
-                type="submit"
-                disabled={loading}
-                className="px-4 py-1 text-sm text-white bg-blue-600 rounded-md hover:bg-blue-700 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
-              >
-                {loading ? <BeatLoader color="white" size={8} /> : "Enviar"}
-              </button>
-            </form>
-          </div>
-        </section>
+                <label className="block text-left">
+                  Tu nombre
+                  <input
+                    type="email"
+                    name="_replyto"
+                    required
+                    onChange={handleInputChange}
+                    value={formState._replyto}
+                    className="mt-1 block w-full px-4 py-2 mb-4 border border-pink-600 rounded-md focus:outline-none focus:ring-2  bg-transparent"
+                  />
+                </label>
 
-        <div className="flex justify-center mt-16 space-x-4">
+                <label className="block text-left">
+                  Tu mensaje
+                  <textarea
+                    name="mensaje"
+                    required
+                    onChange={handleInputChange}
+                    value={formState.mensaje}
+                    className="mt-1 block w-full px-4 py-2 mb-4 border border-pink-600 rounded-md focus:outline-none focus:ring-2  bg-transparent"
+                  ></textarea>
+                </label>
+
+                <div className="flex justify-center mt-2">
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="px-4 py-2 border border-pink-600 text-black bg-magenta-600 rounded-md hover:bg-pink-600 hover:text-white"
+                  >
+                    {loading ? <BeatLoader color="black" size={8} /> : "Enviar"}
+                  </button>
+                </div>
+              </form>
+            </div>
+          </section>
+        </main>
+      </div>
+
+      <footer className="flex justify-between items-end p-4 text-sm text-left w-full border-gray-300">
+        <div className="flex space-x-4 mb-4">
           <a
             href="https://www.instagram.com/bubusolutions/"
             target="_blank"
             rel="noopener noreferrer"
+            className="hover:scale-150 transition-transform duration-200"
           >
             <FaInstagram size={32} />
           </a>
@@ -153,14 +182,12 @@ export default function Home() {
             href="https://wa.me/+542615333661"
             target="_blank"
             rel="noopener noreferrer"
+            className="hover:scale-150 transition-transform duration-200"
           >
             <FaWhatsapp size={32} />
           </a>
         </div>
-      </main>
-
-      <footer className="p-4 mt-4 text-sm text-center w-full border-t border-gray-300">
-        <div className="hover:text-blue-600 transition-colors duration-200">
+        <div className="flex justify-center w-full hover:text-magenta-600 transition-colors duration-200">
           Bubú Solutions® - Mendoza, Argentina.
         </div>
       </footer>
