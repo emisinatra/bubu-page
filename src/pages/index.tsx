@@ -93,13 +93,7 @@ export default function Home() {
         <main className="flex-grow p-4 text-left">
           <h1 className="mt-4 text-9xl">bubú</h1>
           <TypeAnimation
-            sequence={[
-              "Esta llegando...",
-              2000,
-              () => {
-                console.log("Sequence completed");
-              },
-            ]}
+            sequence={["Esta llegando...", 2000]}
             wrapper="h1"
             className=" ml-1 text-pink-600 font-bold text-4xl"
             cursor={true}
