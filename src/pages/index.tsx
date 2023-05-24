@@ -1,78 +1,37 @@
-// Importando los íconos de Instagram y Whatsapp de la biblioteca "react-icons"
-import { FaInstagram, FaWhatsapp } from "react-icons/fa";
-// Importando la función "toast" de "react-toastify" para mostrar alertas
-import { toast } from "react-toastify";
-// Importando los estilos de "react-toastify"
-import "react-toastify/dist/ReactToastify.css";
-// Importando libreria para animacion de typing
-import { TypeAnimation } from "react-type-animation";
-// Importando el componente Head de Next.js para modificar el encabezado del documento HTML
+import { useState, useEffect } from "react";
 import Head from "next/head";
-//Importando componente para animacion de carga
-import { BeatLoader } from "react-spinners";
-// Importando la función useState de React para manejar el estado del formulario
-import { useState } from "react";
+
 // Definiendo el componente Home
 export default function Home() {
-  //Estado para manejar si el formulario esta siendo enviado
-  const [loading, setLoading] = useState(false);
-  // Usando useState para almacenar y actualizar el estado del formulario
-  const [formState, setFormState] = useState({
-    nombre: "",
-    _replyto: "",
-    mensaje: ""
+  const [fechaLanzamiento, setFechaLanzamiento] = useState(
+    new Date("2023-06-10T00:00:00")
+  );
+  const [tiempoFaltante, setTiempoFaltante] = useState({
+    dias: 0,
+    horas: 0,
+    minutos: 0,
+    segundos: 0,
   });
-  // Función para manejar los cambios en los campos del formulario
-  // Esta función se llama cada vez que un usuario escribe en un campo del formulario
-  const handleInputChange = (e: any) => {
-    setFormState({
-      // Manteniendo las propiedades existentes del estado del formulario
-      ...formState,
-
-      // Actualizando el valor del campo específico con lo que el usuario ha escrito
-      [e.target.name]: e.target.value
-    });
-  };
-
-  // Función para manejar el envío del formulario
-  // Esta función se llama cuando un usuario envía el formulario
-  const handleSubmit = async (e: any) => {
-    // Evitando que la página se recargue, que es el comportamiento por defecto al enviar un formulario
-    e.preventDefault();
-    // Inicia la animacion de carga
-    setLoading(true);
-
-    try {
-      // Enviando una petición POST a la API de Formspree con los datos del formulario
-      const response = await fetch("https://formspree.io/f/xqkojewa", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(formState)
-      });
-
-      // Si la petición fue exitosa, mostrando una alerta de éxito y limpiando el formulario
-      if (response.ok) {
-        toast.success("Tu mensaje ha sido enviado correctamente!");
-        setFormState({
-          nombre: "",
-          _replyto: "",
-          mensaje: ""
-        });
-      } else {
-        // Si la respuesta no fue exitosa, lanzando un error
-        throw new Error("Error en la respuesta");
-      }
-    } catch (error) {
-      // Manejando cualquier error lanzado en el try o en el else con un toast
-      toast.error(
-        "Hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo."
-      );
+  const calcularTiempoFaltante = () => {
+    const now = new Date();
+    const diferencia = fechaLanzamiento.getTime() - now.getTime();
+    if (diferencia > 0) {
+      const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((diferencia / (1000 * 60 * 60)) % 24);
+      const minutos = Math.floor((diferencia / 1000 / 60) % 60);
+      const segundos = Math.floor((diferencia / 1000) % 60);
+      setTiempoFaltante({ dias, horas, minutos, segundos });
+    } else {
+      setTiempoFaltante({ dias: 0, horas: 0, minutos: 0, segundos: 0 });
     }
-    // Detiene la animacion de carga
-    setLoading(false);
   };
+
+  type Interval = ReturnType<typeof setInterval>;
+
+  useEffect(() => {
+    const interval: Interval = setInterval(calcularTiempoFaltante, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   // Jsx con los estilos
   return (
@@ -151,19 +110,19 @@ export default function Home() {
 
           <div className="container-tiempo">
             <div className="info-tiempo">
-              <h4>30</h4>
+              <h4>{tiempoFaltante.dias}</h4>
               <p>Días</p>
             </div>
             <div className="info-tiempo">
-              <h4>24</h4>
+              <h4>{tiempoFaltante.horas}</h4>
               <p>Horas</p>
             </div>
             <div className="info-tiempo">
-              <h4>15</h4>
-              <p>minutos</p>
+              <h4>{tiempoFaltante.minutos}</h4>
+              <p>Minutos</p>
             </div>
             <div className="info-tiempo">
-              <h4>30</h4>
+              <h4>{tiempoFaltante.segundos}</h4>
               <p>Segundos</p>
             </div>
           </div>
