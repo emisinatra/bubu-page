@@ -1,38 +1,43 @@
-import { useState, useEffect } from "react";
-import Head from "next/head";
+import { useState, useEffect } from "react"; // Importar los módulos useState y useEffect de React
+import Head from "next/head"; // Importar el componente Head de next/head
 
 // Definiendo el componente Home
 export default function Home() {
   const [fechaLanzamiento, setFechaLanzamiento] = useState(
-    new Date("2023-06-10T00:00:00")
-  );
+    new Date("2023-06-12T10:00:00")
+  ); // Estado para almacenar la fecha de lanzamiento y una función para actualizarla
   const [tiempoFaltante, setTiempoFaltante] = useState({
     dias: 0,
     horas: 0,
     minutos: 0,
     segundos: 0,
-  });
+  }); // Estado para almacenar el tiempo restante y una función para actualizarlo
+
+  // Función para calcular el tiempo restante
   const calcularTiempoFaltante = () => {
-    const now = new Date();
-    const diferencia = fechaLanzamiento.getTime() - now.getTime();
+    const now = new Date(); // Obtener la fecha y hora actual
+    const diferencia = fechaLanzamiento.getTime() - now.getTime(); // Calcular la diferencia entre la fecha de lanzamiento y la fecha actual
+
     if (diferencia > 0) {
-      const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
-      const horas = Math.floor((diferencia / (1000 * 60 * 60)) % 24);
-      const minutos = Math.floor((diferencia / 1000 / 60) % 60);
-      const segundos = Math.floor((diferencia / 1000) % 60);
-      setTiempoFaltante({ dias, horas, minutos, segundos });
+      // Si la diferencia es mayor que cero, es decir, la fecha de lanzamiento todavia llega
+      const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24)); // Calcular el número de días restantes
+      const horas = Math.floor((diferencia / (1000 * 60 * 60)) % 24); // Calcular el número de horas restantes
+      const minutos = Math.floor((diferencia / 1000 / 60) % 60); // Calcular el número de minutos restantes
+      const segundos = Math.floor((diferencia / 1000) % 60); // Calcular el número de segundos restantes
+
+      setTiempoFaltante({ dias, horas, minutos, segundos }); // Actualizar el estado de tiempoFaltante con los nuevos valores calculados
     } else {
-      setTiempoFaltante({ dias: 0, horas: 0, minutos: 0, segundos: 0 });
+      // Si la diferencia es menor o igual a cero, es decir, la fecha de lanzamiento ya ha pasado
+      setTiempoFaltante({ dias: 0, horas: 0, minutos: 0, segundos: 0 }); // Establecer el tiempo restante como cero
     }
   };
 
-  type Interval = ReturnType<typeof setInterval>;
+  type Interval = ReturnType<typeof setInterval>; // Definir el tipo Interval para el valor de retorno de setInterval
 
   useEffect(() => {
-    const interval: Interval = setInterval(calcularTiempoFaltante, 1000);
-    return () => clearInterval(interval);
+    const interval: Interval = setInterval(calcularTiempoFaltante, 1000); // Ejecutar la función calcularTiempoFaltante cada segundo
+    return () => clearInterval(interval); // Limpiar el intervalo cuando el componente se desmonte
   }, []);
-
   // Jsx con los estilos
   return (
     <div className="flex flex-col justify-between min-h-screen text-black">
