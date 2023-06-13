@@ -58,7 +58,7 @@ export default function Home() {
       </Head>
 
       <div className="video-container">
-        <video autoPlay muted loop src="background-4.mp4" />
+        <video autoPlay muted loop playsInline src="background-4.mp4" />
 
         <div className="info-container">
           <div className="wrapper">
