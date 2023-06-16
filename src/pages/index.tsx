@@ -2,6 +2,8 @@ import { useState, useEffect } from "react"; // Importo los modulos useState y u
 import Head from "next/head"; // Importo el componente Head de next/head eso se hace solo igual
 import { pageview } from "../analytics"; // Importo la funcion de seguimiento de G.A
 
+import Navbar from '../components/Navbar'
+
 // Defino el componente Home
 export default function Home() {
   const [fechaLanzamiento, setFechaLanzamiento] = useState(
@@ -50,6 +52,7 @@ export default function Home() {
 
   // Jsx con los estilos
   return (
+
     <div className="flex flex-col justify-between min-h-screen text-black">
       <Head>
         <title>Bubú Solutions</title>

@@ -9,6 +9,7 @@ body {
 
 .video-container {
   position: fixed;
+  margin-top: 60px;
   top: 0;
   left: 0;
   width: 100%;
@@ -23,8 +24,9 @@ body {
   transform: translate(-50%, -50%);
   min-width: 100%;
   min-height: 100%;
-  width: auto;
-  height: auto;
+  /* width: auto;
+  height: auto; */
+  object-fit: cover;
 }
 
 .info-container {

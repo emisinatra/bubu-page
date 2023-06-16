@@ -3,11 +3,13 @@ import "react-toastify/dist/ReactToastify.css";
 import { ChakraProvider } from "@chakra-ui/react";
 import { ToastContainer } from "react-toastify";
 import type { AppProps } from "next/app";
+import Navbar from '@/components/Navbar'
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <ChakraProvider>
+        <Navbar />
         <Component {...pageProps} />
         <ToastContainer
           position="top-right"
