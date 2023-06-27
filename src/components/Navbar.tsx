@@ -4,6 +4,7 @@ import {
     Text,
     IconButton,
     Button,
+    Image,
     Stack,
     Collapse,
     Icon,
@@ -51,19 +52,20 @@ import {
             />
           </Flex>
           <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-            <Text
+            <Image src='' alt='Logo' boxSize='40x' />
+            {/* <Text
               textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
               fontFamily={'heading'}
               color={useColorModeValue('gray.800', 'white')}>
               Logo
-            </Text>
+            </Text> */}
   
             <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
               <DesktopNav />
             </Flex>
           </Flex>
   
-          <Stack
+          {/* <Stack
             flex={{ base: 1, md: 0 }}
             justify={'flex-end'}
             direction={'row'}
@@ -89,7 +91,7 @@ import {
               }}>
               Sign Up
             </Button>
-          </Stack>
+          </Stack> */}
         </Flex>
   
         <Collapse in={isOpen} animateOpacity>
