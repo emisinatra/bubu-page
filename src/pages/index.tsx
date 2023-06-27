@@ -3,10 +3,11 @@ import Head from "next/head"; // Importo el componente Head de next/head eso se 
 import { pageview } from "../analytics"; // Importo la funcion de seguimiento de G.A
 
 import Navbar from '../components/Navbar'
+import Body from "@/components/Body";
 
 // Defino el componente Home
 export default function Home() {
-  
+
   /* const [fechaLanzamiento, setFechaLanzamiento] = useState(
     new Date("2023-07-01T10:00:00")
   ); // Estado para almacenar la fecha de lanzamiento y una funcion para actualizarla
@@ -53,8 +54,6 @@ export default function Home() {
 
   // Jsx con los estilos
   return (
-    
-
     <div className="flex flex-col justify-between min-h-screen text-black">
       <Head>
         <title>Bubú Solutions</title>
@@ -62,7 +61,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-
+      <Body />
       
 
       {/* <div className="video-container">

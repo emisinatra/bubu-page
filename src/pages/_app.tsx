@@ -18,6 +18,7 @@ export default function App({ Component, pageProps }: AppProps) {
           fontFamily={"montserrat"}
         >
           <Navbar />
+
           <Component {...pageProps} />
           <ToastContainer
             position="top-right"
