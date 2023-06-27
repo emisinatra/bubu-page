@@ -6,6 +6,7 @@ import Navbar from '../components/Navbar'
 
 // Defino el componente Home
 export default function Home() {
+  
   const [fechaLanzamiento, setFechaLanzamiento] = useState(
     new Date("2023-07-01T10:00:00")
   ); // Estado para almacenar la fecha de lanzamiento y una funcion para actualizarla
@@ -52,6 +53,7 @@ export default function Home() {
 
   // Jsx con los estilos
   return (
+    
 
     <div className="flex flex-col justify-between min-h-screen text-black">
       <Head>
@@ -60,8 +62,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="video-container">
-        <video autoPlay muted loop playsInline src="background-4.mp4" />
+
+      
+
+      {/* <div className="video-container">
+        {/* <video autoPlay muted loop playsInline src="background-4.mp4" /> 
 
         <div className="info-container">
           <div className="wrapper">
@@ -110,7 +115,7 @@ export default function Home() {
                 <circle cx="4.5" cy="4.5" r="4.5" fill="#D9D9D9" />
               </svg>
             </figure>
-            {/* <h1>BUBÚ</h1> */}
+            {/* <h1>BUBÚ</h1> 
             <figure>
               <img src="logo.png" alt="Logo Bubu Solutions" />
             </figure>
@@ -149,7 +154,7 @@ export default function Home() {
         <footer>
           <p>Bubú Solutions® - Mendoza, Argentina.</p>
         </footer>
-      </div>
+      </div> */}
     </div>
   );
 }
