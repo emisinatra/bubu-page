@@ -11,10 +11,11 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <ChakraProvider theme={theme}>
         <Container
-          backgroundColor={"gray.400"}
+          backgroundColor={"secondary.700"}
           height="100%"
-          maxWidth={"container.lg"}
+          maxWidth={"-moz-initial"}
           textColor={"white"}
+          fontFamily={"montserrat"}
         >
           <Navbar />
           <Component {...pageProps} />

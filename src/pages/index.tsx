@@ -7,7 +7,7 @@ import Navbar from '../components/Navbar'
 // Defino el componente Home
 export default function Home() {
   
-  const [fechaLanzamiento, setFechaLanzamiento] = useState(
+  /* const [fechaLanzamiento, setFechaLanzamiento] = useState(
     new Date("2023-07-01T10:00:00")
   ); // Estado para almacenar la fecha de lanzamiento y una funcion para actualizarla
   const [tiempoFaltante, setTiempoFaltante] = useState({
@@ -49,7 +49,7 @@ export default function Home() {
     // Con esto agarro la ruta y llama a la funcion que hace toda la magia
     const currentPath = window.location.pathname;
     pageview(currentPath);
-  }, []);
+  }, []); */
 
   // Jsx con los estilos
   return (
