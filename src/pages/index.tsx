@@ -2,12 +2,12 @@ import { useState, useEffect } from "react"; // Importo los modulos useState y u
 import Head from "next/head"; // Importo el componente Head de next/head eso se hace solo igual
 import { pageview } from "../analytics"; // Importo la funcion de seguimiento de G.A
 
-import Navbar from '../components/Navbar'
+import Navbar from "../components/Navbar";
 import Body from "@/components/Body";
+import { Container, Stack } from "@chakra-ui/react";
 
 // Defino el componente Home
 export default function Home() {
-
   /* const [fechaLanzamiento, setFechaLanzamiento] = useState(
     new Date("2023-07-01T10:00:00")
   ); // Estado para almacenar la fecha de lanzamiento y una funcion para actualizarla
@@ -54,106 +54,24 @@ export default function Home() {
 
   // Jsx con los estilos
   return (
-    <div className="flex flex-col justify-between min-h-screen text-black">
+    <Container
+      backgroundColor={"secondary.700"}
+      height="100%"
+      width={"100%"}
+      overflow={"hidden"}
+      maxWidth={"100%"}
+      textColor={"white"}
+      fontFamily={"montserrat"}
+    >
       <Head>
         <title>Bubú Solutions</title>
         <meta name="description" content="Sitio web en construcción" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <Body />
-      
-
-      {/* <div className="video-container">
-        {/* <video autoPlay muted loop playsInline src="background-4.mp4" /> 
-
-        <div className="info-container">
-          <div className="wrapper">
-            <a
-              className="button"
-              href="https://api.whatsapp.com/send/?phone=%2B542615333661&text&type=phone_number&app_absent=0"
-              target="_blank"
-            >
-              ¡Hablemos!
-            </a>
-          </div>
-
-          <svg
-            style={{ visibility: "hidden", position: "absolute" }}
-            width="0"
-            height="0"
-            xmlns="http://www.w3.org/2000/svg"
-            version="1.1"
-          >
-            <defs>
-              <filter id="goo">
-                <feGaussianBlur
-                  in="SourceGraphic"
-                  stdDeviation="10"
-                  result="blur"
-                />
-                <feColorMatrix
-                  in="blur"
-                  mode="matrix"
-                  values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
-                  result="goo"
-                />
-                <feComposite in="SourceGraphic" in2="goo" operator="atop" />
-              </filter>
-            </defs>
-          </svg>
-
-          <div className="container-titulo">
-            <figure>
-              <svg
-                className="svg-circle"
-                viewBox="0 0 9 9"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <circle cx="4.5" cy="4.5" r="4.5" fill="#D9D9D9" />
-              </svg>
-            </figure>
-            {/* <h1>BUBÚ</h1> 
-            <figure>
-              <img src="logo.png" alt="Logo Bubu Solutions" />
-            </figure>
-            <figure>
-              <svg
-                className="svg-circle"
-                viewBox="0 0 9 9"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <circle cx="4.5" cy="4.5" r="4.5" fill="#D9D9D9" />
-              </svg>
-            </figure>
-          </div>
-
-          <div className="container-tiempo">
-            <div className="info-tiempo">
-              <h4>{tiempoFaltante.dias}</h4>
-              <p>Días</p>
-            </div>
-            <div className="info-tiempo">
-              <h4>{tiempoFaltante.horas}</h4>
-              <p>Horas</p>
-            </div>
-            <div className="info-tiempo">
-              <h4>{tiempoFaltante.minutos}</h4>
-              <p>Minutos</p>
-            </div>
-            <div className="info-tiempo">
-              <h4>{tiempoFaltante.segundos}</h4>
-              <p>Segundos</p>
-            </div>
-          </div>
-        </div>
-
-        <footer>
-          <p>Bubú Solutions® - Mendoza, Argentina.</p>
-        </footer>
-      </div> */}
-    </div>
+      <Stack direction={"column"} display={"flex"}>
+        <Navbar />
+        <Body />
+      </Stack>
+    </Container>
   );
 }

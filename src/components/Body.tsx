@@ -1,36 +1,61 @@
-import { Text, Stack, Image } from "@chakra-ui/react";
+import {
+  Text,
+  Stack,
+  Image,
+  Flex,
+  Grid,
+  Box,
+  Container,
+} from "@chakra-ui/react";
+/* import { Container } from "postcss"; */
 import React from "react";
 
 const Body = () => {
   return (
-    <Stack>
-      <Image
-        src="/diseño01.png"
-        boxSize={375}
-        objectFit={"cover"}
-        marginLeft={"-24"}
-        marginBottom={"-48"}
-      />
-      <Stack paddingX={"20"} direction={"row-reverse"} justifyContent={"space-between"}>
-      <Image
-          src="/diseño02.png"
-          boxSize={1000}
+    <Grid>
+      <Box>
+        <Image
+          src="/diseño01.png"
+          boxSize={375}
           objectFit={"cover"}
-          marginTop={"-80"}
-          marginRight={"-96"}
-          position={"relative"}
-          right={-20}
-          minW={"-moz-min-content"}
-
+          marginLeft={"-24"}
+          marginBottom={"-48"}
         />
-        <Stack  position={"absolute"} left={20} textColor={"white"}>
-          <Text fontWeight={"bold"} fontSize={"8xl"} marginBottom={-10}>
-            CREATING BONDS
-          </Text>
-          <Stack direction={"row"} fontWeight={"bold"} fontSize={"8xl"} >
-            <Text >JOINING PEOPLE</Text>
-            <Text textColor={"primary.500"}>.</Text>
-          </Stack>
+      </Box>
+
+      <Box>
+        <Image
+          src="/diseño02.png"
+          boxSize={"100%"}
+          objectFit={"contain"}
+          /* marginTop={"-80"}
+          marginRight={"-96"} */
+          position={"relative"}
+          /* right={-20} */
+          minW={"-moz-min-content"}
+          justifySelf={"center"}
+        />
+      </Box>
+
+      <Stack
+        paddingX={"20"}
+        /* direction={"row-reverse"} */
+        /* justifyContent={"space-between"} */
+      >
+        <Stack
+          position={"absolute"}
+          left={20}
+          textColor={"white"}
+          fontWeight={"bold"}
+          fontSize={"8xl"}
+        >
+          <Box>
+            <Text marginBottom={-10}>CREATING BONDS</Text>
+            <Stack direction={"row"}>
+              <Text>JOINING PEOPLE</Text>
+              <Text textColor={"primary.500"}>.</Text>
+            </Stack>
+          </Box>
           <Stack maxW={860} textAlign={"left"}>
             <Text fontWeight={"300"} fontSize={18} lineHeight={"6"}>
               es una agencia de creatividad y diseño situada en Córdoba,
@@ -44,13 +69,13 @@ const Body = () => {
           </Stack>
           <Stack direction={"row"} alignItems={"center"}>
             <Image src="/diseño01.png" boxSize={50} objectFit={"cover"} />
-            <Text fontSize={20} fontWeight={"bold"}>Charlemos...</Text>
+            <Text fontSize={20} fontWeight={"bold"}>
+              Charlemos...
+            </Text>
           </Stack>
-          
         </Stack>
-        
       </Stack>
-    </Stack>
+    </Grid>
   );
 };
 
