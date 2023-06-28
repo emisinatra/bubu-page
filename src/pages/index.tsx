@@ -109,9 +109,7 @@ export default function Home() {
               </svg>
             </figure>
             {/* <h1>BUBÚ</h1> */}
-            <figure>
-              <img src="logo.png" alt="Logo Bubu Solutions" />
-            </figure>
+
             <figure>
               <svg
                 className="svg-circle"
