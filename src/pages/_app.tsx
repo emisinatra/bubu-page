@@ -2,12 +2,13 @@ import "@/styles/globals.css";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import "@/styles/card.css";
+import { ChakraProvider } from "@chakra-ui/react";
 
 import type { AppProps } from "next/app";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <ChakraProvider>
       <Component {...pageProps} />
       <ToastContainer
         position="top-right"
@@ -20,6 +21,6 @@ export default function App({ Component, pageProps }: AppProps) {
         draggable
         pauseOnHover
       />
-    </>
+    </ChakraProvider>
   );
 }
