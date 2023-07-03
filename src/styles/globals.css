@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,500;0,900;1,100;1,500;1,700;1,900&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap");
 
 body {
   /* font-family: "Roboto", sans-serif; */
@@ -166,3 +166,7 @@ footer {
   }
 }
  */
+
+ .slick-dots li.slick-active button:before {
+  color: #f29569 !important;
+}
