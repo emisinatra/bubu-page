@@ -5,7 +5,7 @@ import { pageview } from "../analytics"; // Importo la funcion de seguimiento de
 // Defino el componente Home
 export default function Home() {
   const [fechaLanzamiento, setFechaLanzamiento] = useState(
-    new Date("2023-07-01T10:00:00")
+    new Date("2023-07-15T10:00:00")
   ); // Estado para almacenar la fecha de lanzamiento y una funcion para actualizarla
   const [tiempoFaltante, setTiempoFaltante] = useState({
     dias: 0,
@@ -64,7 +64,7 @@ export default function Home() {
           <div className="wrapper">
             <a
               className="button"
-              href="https://api.whatsapp.com/send/?phone=%2B542615333661&text&type=phone_number&app_absent=0"
+              href="https://api.whatsapp.com/send?phone=542617166509&text=Hola%20buenos%20dias!%20Me%20gustaria%20saber%20sobre%20su%20servicio%20de%3A%20"
               target="_blank"
             >
               ¡Hablemos!
