@@ -24,6 +24,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      {/* Imágen de fondo */}
       <Box pos={"relative"}>
         <Image
           src="/fondo_web-100.jpg"
@@ -35,6 +36,7 @@ export default function Home() {
           pos={"fixed"}
         />
 
+        {/* Contenedor con navbar y body */}
         <Box pos={"absolute"}>
           <Stack direction={"column"} display={"flex"} zIndex={"9"}>
             <Navbar />

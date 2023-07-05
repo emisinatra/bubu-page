@@ -5,17 +5,14 @@ const TextBody = () => {
   return (
     <Box
       paddingX={"20"}
-      /* mt={"-96"} */
       mt={["10%", "24%", "24%", "24%", "24%"]}
       zIndex={"9999"}
       left={20}
       textColor={"white"}
       fontWeight={"bold"}
       fontSize={["4xl", "5xl", "6xl", "7xl", "8xl"]}
-      /* position={"absolute"} */
     >
       <Box>
-        {/* <Text lineHeight={["8"]} mb={"2"}>CREATING BONDS</Text> */}
         <Stack direction={["column", "row"]}>
           <Text mb={["-30px", "0"]}>CREATING </Text>
           <Text>BONDS</Text>
@@ -35,7 +32,6 @@ const TextBody = () => {
           fontWeight={"300"}
           fontSize={[10, 13, 13, 14, 18]}
           lineHeight={"6"}
-          /* textAlign={{base:"justify"}} */
         >
           es una agencia de creatividad y diseño situada en Córdoba,
           Argentina.Hace más de diez años trabajamos transversalmente con

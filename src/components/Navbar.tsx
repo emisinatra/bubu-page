@@ -12,8 +12,6 @@ const Navbar: React.FC = () => {
       paddingX={["0", "15", "20", "20", "20"]}
       fontSize={["x-small", "x-small", "sm", "md", "md"]}
       w={["sm", "full"]}
-      /* ml={["-16px","0"]}
-      mr={["-16px","0"]} */
       maxW={["-webkit-max-content","full"]}
     >
       <Image
