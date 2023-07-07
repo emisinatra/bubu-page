@@ -16,16 +16,16 @@ const Navbar: React.FC = () => {
     >
       <Image
         transform={[
-          "scale(0.5)",
-          "scale(0.8)",
-          "scale(1.0)",
-          "scale(1.0)",
+          "scale(0.6)",
+          "scale(0.9)",
+          "scale(1.1)",
+          "scale(1.1)",
           "scale(1.0)",
         ]}
         maxW={"100px"}
         maxH={"70px"}
         objectFit={"contain"}
-        src="/bubu2.png"
+        src="/bubu-fixed.svg"
       />
       <Stack direction={"row"} spacing={["2","6"]}>
         <Text>Conócenos</Text>

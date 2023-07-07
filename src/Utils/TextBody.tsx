@@ -4,17 +4,17 @@ import React from "react";
 const TextBody = () => {
   return (
     <Box
-      paddingX={"20"}
-      mt={["10%", "24%", "24%", "24%", "24%"]}
+      paddingX={"20px"}
+      mt={["10%", "20%", "20%", "20%", "12%"]}
+      ml={["0", "0", "0", "0", "10%"]}
       zIndex={"9999"}
-      left={20}
       textColor={"white"}
       fontWeight={"bold"}
-      fontSize={["4xl", "5xl", "6xl", "7xl", "8xl"]}
+      fontSize={["4xl", "4xl", "6xl", "6xl", "7xl"]}
     >
       <Box>
         <Stack direction={["column", "row"]}>
-          <Text mb={["-30px", "0"]}>CREATING </Text>
+          <Text mb={["-30px", "0"]}>CREATING</Text>
           <Text>BONDS</Text>
         </Stack>
         <Stack direction={"row"}>
@@ -27,7 +27,7 @@ const TextBody = () => {
           </Stack>
         </Stack>
       </Box>
-      <Stack maxW={[200, 450, 573, 688, 917]} textAlign={"left"}>
+      <Stack maxW={[300, 450, 573, 688, 917]} textAlign={"left"}>
         <Text
           fontWeight={"300"}
           fontSize={[10, 13, 13, 14, 18]}
