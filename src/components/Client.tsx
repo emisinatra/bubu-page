@@ -1,15 +1,20 @@
 import Image from "next/image";
-import {Box} from "@chakra-ui/react";
+import { Center } from "@chakra-ui/react";
 type ClientProps = {
-    name: string;
-    pathToLogo: string;
-}
+  name: string;
+  pathToLogo: string;
+};
 
-export const Client: React.FC<ClientProps> = ({name, pathToLogo}) => {
-    return (
-        <Box>
-
-            <Image src={pathToLogo} alt={name} height={150} width={150} color="#FFF"/>
-        </Box>
-    )
-}
+export const Client = ({ name, pathToLogo }: ClientProps) => {
+  return (
+    <Center height={150}>
+      <Image
+        src={pathToLogo}
+        alt={name}
+        height={200}
+        width={200}
+        color="#FFF"
+      />
+    </Center>
+  );
+};
