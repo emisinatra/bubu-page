@@ -28,7 +28,7 @@ export default extendTheme({
     },
     secondary: {
       /* ...theme.colors.blue, */
-      400: "#0F3040",
+      400: "#0F3058",
       500: "#0F3043",
     }
   },

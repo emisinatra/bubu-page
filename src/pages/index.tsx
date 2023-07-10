@@ -5,6 +5,7 @@ import { pageview } from "../analytics"; // Importo la funcion de seguimiento de
 import Navbar from "../components/Navbar";
 import Body from "@/components/Body";
 import { Container, Stack, Image, Box } from "@chakra-ui/react";
+import NavbarMobile from "@/components/NavbarMobile";
 
 // Defino el componente Home
 export default function Home() {

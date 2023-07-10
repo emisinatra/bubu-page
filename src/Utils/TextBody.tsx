@@ -7,9 +7,9 @@ import React from "react";
 const TextBody = () => {
   return (
     <Box
-      paddingX={["20px","20"]}
+      paddingX={["10","20"]}
       mt={["6%", "6%", "8%", "8%", "10%"]}
-      zIndex={"9999"}
+      zIndex={10}
       textColor={"white"}
       fontWeight={"bold"}
       fontSize={["4xl", "5xl", "6xl", "7xl", "80px"]}
