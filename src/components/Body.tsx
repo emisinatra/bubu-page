@@ -15,6 +15,7 @@ import ImagesBody from "../Utils/ImagesBody";
 import ServiceCarousel from "./ServiceCarousel";
 import TextServicios from "@/Utils/TextServicios";
 import SingleImage from "@/Utils/SingleImage";
+import FormContainer from "./FormContainer";
 
 const Body = () => {
   return (
@@ -29,7 +30,10 @@ const Body = () => {
         <TextServicios />
         <ServiceCarousel />
       </Box>
-      <Box ml={"-15%"} mt={"-15%"} zIndex={"-1"}>
+      <Box>
+        <FormContainer />
+      </Box>
+      <Box ml={"-15%"} mt={"10%"} zIndex={"-1"}>
         <SingleImage />
       </Box>
     </Grid>

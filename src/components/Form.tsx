@@ -1,5 +1,13 @@
 import { useState, ChangeEvent, FormEvent } from "react";
-import { Box, Button, FormControl, FormLabel, Input } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Wrap,
+  FormControl,
+  Input,
+  Text,
+  WrapItem,
+} from "@chakra-ui/react";
 import axios from "axios";
 
 const Form = () => {
@@ -42,47 +50,88 @@ const Form = () => {
   };
 
   return (
-    <Box maxWidth="400px" margin="0 auto">
+    <Box
+      background={"rgba(22, 25, 27, 0.50)"}
+      backdropFilter={"blur(25px)"}
+      borderRadius={54}
+      width={["90vw", "85vw", "80vw"]}
+      py={[10, 10, 10, 10, 20]}
+      px={20}
+      minH={300}
+      display={"flex"}
+      justifyContent={"center"}
+      alignItems={"center"}
+      fontWeight={600}
+      fontSize={"1.5rem"}
+      position={"absolute"}
+      top={["32", "32", "20", "20", "0"]}
+      right={["-10%", "-15%", "-15%"]}
+    >
       <form onSubmit={handleSubmit}>
         <FormControl>
-          <FormLabel>Nombre:</FormLabel>
-          <Input
-            type="text"
-            name="nombre"
-            value={formData.nombre}
-            onChange={handleChange}
-          />
+          <Wrap maxW={["80vw", "50vw", "50vw"]}>
+            <WrapItem>
+              <Text>Mi nombre es </Text>
+            </WrapItem>
+            <WrapItem>
+              <Input
+                placeholder="TU NOMBRE COMPLETO"
+                variant="flushed"
+                name="nombre"
+                value={formData.nombre}
+                onChange={handleChange}
+              ></Input>
+            </WrapItem>
+            <WrapItem>
+              <Text> y tengo un </Text>
+            </WrapItem>
+            <WrapItem>
+              <Input
+                placeholder="TU NEGOCIO"
+                variant="flushed"
+                name="negocio"
+                value={formData.negocio}
+                onChange={handleChange}
+              ></Input>
+            </WrapItem>
+            <WrapItem>
+              <Text> el cual necesita ayuda.</Text>
+            </WrapItem>
+            <WrapItem>
+              <Text> Podrían ayudarme con </Text>
+            </WrapItem>
+            <WrapItem>
+              <Input
+                placeholder="DISEÑO WEB"
+                variant="flushed"
+                name="servicio"
+                value={formData.servicio}
+                onChange={handleChange}
+              ></Input>
+            </WrapItem>
+            <WrapItem>
+              <Text> para que empiece a ocurrir la magia. </Text>
+            </WrapItem>
+            <WrapItem>
+              <Text> Mi email es </Text>
+            </WrapItem>
+            <WrapItem>
+              <Input
+                placeholder="TU EMAIL"
+                variant="flushed"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+              ></Input>
+            </WrapItem>
+          </Wrap>
+
+          <Box display={"flex"} justifyContent={"center"} alignItems={"center"}>
+            <Button type="submit" mt={5}>
+              enviar información
+            </Button>
+          </Box>
         </FormControl>
-        <FormControl>
-          <FormLabel>Negocio:</FormLabel>
-          <Input
-            type="text"
-            name="negocio"
-            value={formData.negocio}
-            onChange={handleChange}
-          />
-        </FormControl>
-        <FormControl>
-          <FormLabel>Servicio:</FormLabel>
-          <Input
-            type="text"
-            name="servicio"
-            value={formData.servicio}
-            onChange={handleChange}
-          />
-        </FormControl>
-        <FormControl>
-          <FormLabel>Email:</FormLabel>
-          <Input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-          />
-        </FormControl>
-        <Button mt={4} colorScheme="teal" type="submit">
-          Enviar
-        </Button>
       </form>
     </Box>
   );
