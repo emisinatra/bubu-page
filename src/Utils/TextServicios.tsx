@@ -6,7 +6,7 @@ const TextServicios = () => {
     <HStack
       textColor={"white"}
       fontWeight={"bold"}
-      fontSize={["4xl", "5xl", "6xl", "7xl", "8xl"]}
+      fontSize={["30px", "40px", "50px", "60px", "70px"]}
       px={"20"}
       pb={"10"}
     >

@@ -1,39 +1,64 @@
-import { Box, Stack, Text, flexbox, Image } from "@chakra-ui/react";
+import {
+  Box,
+  Stack,
+  Text,
+  flexbox,
+  Image,
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  HStack,
+} from "@chakra-ui/react";
 import React from "react";
 
 const Navbar: React.FC = () => {
   return (
-    <Stack
-      alignItems={"center"}
-      direction={"row"}
-      justifyContent={"space-between"}
+    <Breadcrumb
+      separator={" "}
       height={"80px"}
-      pt={["0px","50px"]}
+      pt={["0px","20px","30px", "40px"]}
       paddingX={["0", "15", "20", "20", "20"]}
-      fontSize={["x-small", "x-small", "sm", "md", "md"]}
+      fontSize={["8px", "x-small", "sm", "sm", "sm"]}
       w={["sm", "full"]}
-      maxW={["-webkit-max-content","full"]}
+      maxW={["full"]}
+      css={{
+        "& > ol": {
+          display: "flex",
+          justifyContent: "space-between",
+        },
+      }}
     >
-      <Image
-        transform={[
-          "scale(0.5)",
-          "scale(0.8)",
-          "scale(1.0)",
-          "scale(1.0)",
-          "scale(1.0)",
-        ]}
-        maxW={"100px"}
-        maxH={"70px"}
-        objectFit={"contain"}
-        src="/bubu2.png"
-      />
-      <Stack direction={"row"} spacing={["2","6"]}>
-        <Text>Conócenos</Text>
-        <Text>Servicios</Text>
-        <Text>Proyectos</Text>
-      </Stack>
-      <Text>Contacto</Text>
-    </Stack>
+      <BreadcrumbItem mr={["-50%",0]}>
+        <Image
+          transform={[
+            "scale(0.4)",
+            "scale(0.8)",
+            "scale(0.8)",
+            "scale(0.9)",
+            "scale(1.0)",
+          ]}
+          ml={["-20%","0"]}
+          maxW="100px"
+          maxH="70px"
+          objectFit="contain"
+          src="/bubu2.png"
+        />
+      </BreadcrumbItem>
+
+      <BreadcrumbItem>
+        <HStack spacing={["0.5rem","2rem"]}>
+          <BreadcrumbLink href="#">Conócenos</BreadcrumbLink>
+          <BreadcrumbLink href="#">Servicios</BreadcrumbLink>
+          <BreadcrumbLink href="#">Proyectos</BreadcrumbLink>
+        </HStack>
+      </BreadcrumbItem>
+
+      <BreadcrumbItem>
+        <Box marginLeft={["-9.2rem","auto"]}>
+          <BreadcrumbLink href="#">Contacto</BreadcrumbLink>
+        </Box>
+      </BreadcrumbItem>
+    </Breadcrumb>
   );
 };
 

@@ -12,7 +12,7 @@ export default function Home() {
     <Container
       backgroundColor={"secondary.700"}
       height="100%"
-      width={["md", "full"]}
+      width={["full"]}
       overflowX={"hidden"}
       maxWidth={"100%"}
       textColor={"white"}
