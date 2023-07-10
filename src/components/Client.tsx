@@ -7,7 +7,7 @@ type ClientProps = {
 
 export const Client = ({ name, pathToLogo }: ClientProps) => {
   return (
-    <Center height={150}>
+    <Center height={200} mx={20}>
       <Image
         src={pathToLogo}
         alt={name}

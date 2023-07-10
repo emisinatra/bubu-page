@@ -2,10 +2,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import { Box, Center } from "@chakra-ui/react";
 import { Client } from "./Client";
+import Marquee from "react-fast-marquee";
 
 const clients = [
-  { name: "ted", pathToLogo: "/clients/Group 59.svg" },
-  { name: "otro", pathToLogo: "/clients/Vector.svg" },
   { name: "ibox", pathToLogo: "/clients/IBOX REDUCIDO.png" },
   { name: "monki", pathToLogo: "/clients/MONKI REDUCIDO.png" },
 ];
@@ -39,12 +38,12 @@ export const ClientCarousel = () => {
   return (
     <Box
       marginX={10}
-      padding={4}
+      px={4}
       border={"5px solid #8D9195"}
       borderRadius={20}
       mt={3}
     >
-      <Slider {...settings}>
+      <Marquee speed={50} autoFill={true}>
         {clients.map((client) => {
           return (
             <Client
@@ -54,7 +53,7 @@ export const ClientCarousel = () => {
             />
           );
         })}
-      </Slider>
+      </Marquee>
     </Box>
   );
 };
