@@ -6,8 +6,8 @@ export const ProyectGrid = () => {
   return (
     <Center margin={["2rem", "3.5rem", "5rem", "7rem", "10rem"]}>
       <SimpleGrid
-        columns={[1, 1, 1, 1, 1, 2]}
-        gap={["2rem", "3rem", "4rem", "5rem"]}
+        columns={[1, 1, 1, 2, 2, 2]}
+        gap={["2rem", "3rem", "3rem", "2rem", "4rem", "5rem"]}
       >
         {ProyectCardInfo.map((item, key) => {
           return (

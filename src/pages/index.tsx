@@ -6,19 +6,22 @@ import ServiceCarousel from "@/components/ServiceCarousel";
 import { Box, Image, Center } from "@chakra-ui/react";
 import { ProyectCard } from "@/components/ProyectCard";
 import { ProyectGrid } from "@/components/ProyectGrid";
+import ServiceCardSelector from "@/components/ServiceCardSelector";
+import { Footer } from "@/components/Footer";
+import { FooterSocialInfo } from "@/utils/FooterSocialInfo";
 
 // Defino el componente Home
 export default function Home() {
   // Jsx con los estilos
   return (
-    <Box overflow={"hidden"}>
+    <Box overflow={"hidden"} bg={"rgba(22, 25, 27, 0.5)"}>
       <Head>
         <title>Bubú Solutions</title>
         <meta name="description" content="Sitio web en construcción" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <ServiceCarousel />
+      <ServiceCardSelector />
 
       <ProyectGrid />
 
@@ -29,6 +32,10 @@ export default function Home() {
           height={"200vh"}
         ></Image>
       </Box>
+      <Footer
+        leftDescription={"2023 © Bubú Solutions"}
+        social={FooterSocialInfo}
+      />
     </Box>
   );
 }

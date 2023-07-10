@@ -6,7 +6,6 @@ import {
   Text,
   Heading,
   Stack,
-  Icon,
   Center,
   Circle,
   Link,
@@ -29,7 +28,7 @@ export const ProyectCard: React.FC<Props> = ({
   return (
     <Center>
       <Card
-        padding={["3rem", "4rem", "5rem", "6rem"]}
+        padding={["3rem", "4rem", "4rem", "2.5rem", "2.5rem", "3.5rem"]}
         display={"flex"}
         flexDirection={"column"}
         background={"rgba(22, 25, 27, 0.5)"}
@@ -40,10 +39,9 @@ export const ProyectCard: React.FC<Props> = ({
         borderRadius={"2rem"}
         backdropFilter={"blur(25px)"}
         textAlign={"left"}
-        gap={["1rem", "1.25rem", "1.5rem", "2rem"]}
         color={"white"}
-        width={["40rem", "50rem", "60rem"]}
-        height={["25rem", "30rem"]}
+        width={["20rem", "30rem", "30rem", "35rem", "35rem", "35rem"]}
+        height={["20rem", "25rem", "25rem", "20rem", "20rem", "22.5rem"]}
       >
         <Link href={redirectUrl} isExternal>
           <Circle
@@ -53,12 +51,23 @@ export const ProyectCard: React.FC<Props> = ({
             position={"absolute"}
             top={0}
             right={0}
-            margin={["1.5rem", "2.25rem", "3rem"]}
-            size={["4rem", "5rem", "6rem"]}
+            margin={["1.5rem", "2rem", "2rem", "2rem", "2rem", "2rem"]}
+            size={["4rem", "5rem", "5rem", "4rem", "4.25rem", "4.5rem"]}
             cursor={"pointer"}
+            _hover={{
+              backgroundColor: "rgba(22, 25, 27,0.75)",
+              color: "white",
+            }}
           >
             <CustomArrow
-              boxSize={["1.25rem", "1.65rem", "2rem"]}
+              boxSize={[
+                "1.25rem",
+                "1.65rem",
+                "2rem",
+                "1.65rem",
+                "2rem",
+                "2rem",
+              ]}
               viewBox="	0 0 75 75"
             />
           </Circle>
@@ -69,22 +78,42 @@ export const ProyectCard: React.FC<Props> = ({
           flexDirection={"column"}
           gap={["1.5rem", "1.65rem", "1.75rem", "1.85rem", "2rem"]}
           padding={"0"}
-          marginRight={"3rem"}
+          marginRight={["2.5rem", "3rem", "2rem", "3.5rem", "3rem"]}
         >
-          <Heading fontSize={["2rem", "3rem", "4rem"]} fontWeight={700}>
+          <Heading
+            fontSize={["1.5rem", "2rem", "2.5rem", "2rem", "2.25rem", "2.5rem"]}
+            fontWeight={700}
+          >
             {title}
           </Heading>
         </CardHeader>
 
-        <CardBody padding={"0"} display={"flex"}>
-          <Stack gap={"2rem"} justifyContent={"space-between"}>
+        <CardBody padding={"0"} display={"flex"} paddingTop={"1rem"}>
+          <Stack justifyContent={"space-between"}>
             <Text
-              fontSize={["1rem", "1.2rem", "1.2rem", "1.35rem", "1.5rem"]}
+              fontSize={[
+                "1rem",
+                "1.25rem",
+                "1.3rem",
+                "1.25rem",
+                "1.25rem",
+                "1.3rem",
+              ]}
               fontWeight={400}
             >
               {subtitle}
             </Text>
-            <Stack direction={"row"} gap={["0.5rem", "1rem", "2rem"]}>
+            <Stack
+              direction={"row"}
+              gap={[
+                "0.5rem",
+                "1rem",
+                "1.25rem",
+                "0.5rem",
+                "1.25rem",
+                "1.25rem",
+              ]}
+            >
               {tags.map((item, key) => {
                 return (
                   <Center
@@ -94,10 +123,22 @@ export const ProyectCard: React.FC<Props> = ({
                     fontWeight={"medium"}
                     padding={"0.5rem 1rem"}
                     borderRadius={"2rem"}
-                    width={["6rem", "8rem", "10rem"]}
                     key={key}
+                    _hover={{
+                      backgroundColor: "rgba(22, 25, 27, 0.5)",
+                      color: "white",
+                    }}
                   >
-                    <Text fontSize={["0.8rem", "1.2rem", "1.5rem"]}>
+                    <Text
+                      fontSize={[
+                        "1rem",
+                        "1.2rem",
+                        "1.15rem",
+                        "1.2rem",
+                        "1.15rem",
+                        "1.1rem",
+                      ]}
+                    >
                       {item}
                     </Text>
                   </Center>

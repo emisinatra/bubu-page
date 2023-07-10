@@ -29,9 +29,8 @@ export const ServiceCard: React.FC<Props> = ({ title, subtitle, body }) => {
         backdropFilter={"blur(25px)"}
         textAlign={"left"}
         gap={["0.5rem", "1rem", "1.5rem", "2rem"]}
-        width={["90vw", "85vw", "80vw"]}
+        width={["90vw", "85vw", "80vw", "75vw", "70vw", "65vw"]}
         color={"white"}
-        cursor={"grab"}
       >
         <CardHeader
           display={"flex"}
@@ -39,11 +38,27 @@ export const ServiceCard: React.FC<Props> = ({ title, subtitle, body }) => {
           padding={"0"}
         >
           <Center>
-            <CustomArrow boxSize={["1.5rem", "2rem", "3rem", "4rem", "5rem"]} />
+            <CustomArrow
+              boxSize={[
+                "1.5rem",
+                "1.8rem",
+                "2.1rem",
+                "2.4rem",
+                "2.7rem",
+                "3rem",
+              ]}
+            />
           </Center>
 
           <Heading
-            fontSize={["1.5rem", "1.75rem", "2rem", "3rem", "4rem"]}
+            fontSize={[
+              "1.5rem",
+              "1.7rem",
+              "1.9rem",
+              "2.1rem",
+              "2.3rem",
+              "2.5rem",
+            ]}
             fontWeight={700}
           >
             {title}
@@ -58,13 +73,31 @@ export const ServiceCard: React.FC<Props> = ({ title, subtitle, body }) => {
             spacing={["3", "4"]}
           >
             <Heading
-              fontSize={["1.25rem", "1.5rem", "1.75rem", "2rem"]}
+              fontSize={[
+                "1.25rem",
+                "1.3rem",
+                "1.35rem",
+                "1.4rem",
+                "1.45rem",
+                "1.5rem",
+              ]}
               fontFamily={"Lora"}
               fontWeight={600}
             >
               {subtitle}
             </Heading>
-            <Text fontSize={["1rem", "1.25rem", "1.5rem"]}>{body}</Text>
+            <Text
+              fontSize={[
+                "1rem",
+                "1.25rem",
+                "1.3rem",
+                "1.25rem",
+                "1.25rem",
+                "1.3rem",
+              ]}
+            >
+              {body}
+            </Text>
           </Stack>
         </CardBody>
       </Card>
