@@ -1,8 +1,10 @@
-import Form from "./Form";
+import FormDesktop from "./FormDesktop";
+import FormMobile from "./FormMobile";
 import { Box, HStack, Text, Stack } from "@chakra-ui/react";
 const FormContainer = () => {
   return (
     <Box position={"relative"} mt={5}>
+      {/* Texto del formulario */}
       <Stack>
         <HStack
           textColor={"white"}
@@ -18,14 +20,18 @@ const FormContainer = () => {
         </HStack>
         <Text
           position={"relative"}
-          mt={[20, 20, 20, 20, 28]}
+          mt={["12", "16", "20", "20", "24"]}
           px={10}
           fontSize={"large"}
         >
           formulario básico
         </Text>
       </Stack>
-      <Form />
+
+      {/* Formulario desktop*/}
+      <FormDesktop />
+      {/* Formulario Mobile */}
+      <FormMobile />
     </Box>
   );
 };

@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react";
 import axios from "axios";
 
-const Form = () => {
+const FormDesktop = () => {
   // estado para almacenar los datos del formulario
   const [formData, setFormData] = useState({
     nombre: "",
@@ -58,7 +58,7 @@ const Form = () => {
       py={[10, 10, 10, 10, 20]}
       px={20}
       minH={300}
-      display={"flex"}
+      display={["none", "none", "none", "flex", "flex", "flex"]}
       justifyContent={"center"}
       alignItems={"center"}
       fontWeight={600}
@@ -137,4 +137,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default FormDesktop;
