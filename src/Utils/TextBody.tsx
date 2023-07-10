@@ -7,21 +7,21 @@ import React from "react";
 const TextBody = () => {
   return (
     <Box
-      paddingX={"20"}
-      mt={["10%", "12%", "12%", "14%", "16%"]}
+      paddingX={["20px","20"]}
+      mt={["6%", "6%", "8%", "8%", "10%"]}
       zIndex={"9999"}
       textColor={"white"}
       fontWeight={"bold"}
       fontSize={["4xl", "5xl", "6xl", "7xl", "80px"]}
     >
       <Box>
-        <Stack direction={["column", "row"]} spacing={"2rem"}>
-          <Text mb={["-25%", "0"]}>CREATING </Text>
+        <Stack direction={["column", "row"]} spacing={["0","2rem"]} >
+          <Text mb={["-1.2rem","0"]} >CREATING </Text>
           <Text>BONDS</Text>
         </Stack>
         <Stack direction={"row"}>
-          <Stack direction={["column", "row"]} spacing={"2rem"}>
-            <Text mb={["-30%", "0"]}>JOINING </Text>
+          <Stack direction={["column", "row"]} spacing={["0","2rem"]}>
+            <Text mb={["-1.2rem", "0"]}>JOINING </Text>
             <HStack>
               <Text>PEOPLE</Text>
               <Text textColor={"primary.500"}>.</Text>
@@ -29,7 +29,7 @@ const TextBody = () => {
           </Stack>
         </Stack>
       </Box>
-      <Stack maxW={[200, 450, 573, 688, 800]} textAlign={"left"}>
+      <Stack maxW={[250, 450, 573, 688, 800]} textAlign={"left"}>
         <Text
           fontWeight={"300"}
           fontSize={[10, 13, 13, 14, 18]}
