@@ -6,18 +6,18 @@ import { Client } from "./Client";
 const clients = [
   { name: "ted", pathToLogo: "/clients/Group 59.svg" },
   { name: "otro", pathToLogo: "/clients/Vector.svg" },
-  { name: "ted2", pathToLogo: "/clients/Group 59.svg" },
-  { name: "otro2", pathToLogo: "/clients/Vector.svg" },
+  { name: "ibox", pathToLogo: "/clients/IBOX REDUCIDO.png" },
+  { name: "monki", pathToLogo: "/clients/MONKI REDUCIDO.png" },
 ];
 
 export const ClientCarousel = () => {
   const settings = {
     infinite: true,
-    slidesToShow: 3,
+    slidesToShow: 2,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 2000,
-    autoplaySpeed: 2000,
+    speed: 3000,
+    autoplaySpeed: 3000,
     cssEase: "linear",
     arrows: false,
     responsive: [
