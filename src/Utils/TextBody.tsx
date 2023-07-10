@@ -10,7 +10,6 @@ const TextBody = () => {
       paddingX={"20"}
       mt={["10%", "12%", "12%", "14%", "16%"]}
       zIndex={"9999"}
-      left={20}
       textColor={"white"}
       fontWeight={"bold"}
       fontSize={["4xl", "5xl", "6xl", "7xl", "80px"]}

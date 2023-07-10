@@ -1,7 +1,10 @@
 import { HStack, Text } from "@chakra-ui/react";
 import React from "react";
 
-const TextServicios = () => {
+type TextSeccionProps = {
+  text: string;
+};
+const TextSeccion: React.FC<TextSeccionProps> = ({text}) => {
   return (
     <HStack
       textColor={"white"}
@@ -10,10 +13,10 @@ const TextServicios = () => {
       px={"20"}
       pb={"10"}
     >
-      <Text>servicios</Text>
+      <Text>{text}</Text>
       <Text textColor={"primary.500"}>.</Text>
     </HStack>
   );
 };
 
-export default TextServicios;
+export default TextSeccion;
