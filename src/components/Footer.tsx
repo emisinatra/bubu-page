@@ -1,21 +1,13 @@
-import { CustomArrow } from "@/icons/CustomArrow";
 import {
-  Card,
-  CardHeader,
-  CardBody,
   Text,
-  Heading,
   Stack,
-  StackDivider,
-  Icon,
   Image,
   Center,
   Box,
   Square,
   Link,
 } from "@chakra-ui/react";
-import { useState } from "react";
-import { IconType } from "react-icons";
+
 interface Props {
   leftDescription: string;
   social: { icon: React.JSX.Element; url: string }[];
@@ -32,7 +24,7 @@ export const Footer: React.FC<Props> = ({ leftDescription, social }) => {
           display={{ base: "none", md: "block" }}
           color={"white"}
           fontFamily={"Montserrat"}
-          fontSize={["0.75rem", "1rem", "1rem", "1rem", "1rem", "1rem"]}
+          fontSize={"0.75rem"}
         >
           {leftDescription}
         </Text>
@@ -52,7 +44,8 @@ export const Footer: React.FC<Props> = ({ leftDescription, social }) => {
                   key={key}
                   _hover={{
                     bg: "rgba(22, 25, 27,0.75)",
-                    transition: "ease-in",
+                    transition: "ease-in-out",
+                    transitionDuration: "0.1s",
                   }}
                 >
                   {item.icon}
@@ -67,7 +60,7 @@ export const Footer: React.FC<Props> = ({ leftDescription, social }) => {
           display={{ base: "block", md: "none" }}
           color={"white"}
           fontFamily={"Montserrat"}
-          fontSize={["0.75rem", "1rem", "1rem", "1rem", "1rem", "1rem"]}
+          fontSize={"0.75rem"}
         >
           {leftDescription}
         </Text>

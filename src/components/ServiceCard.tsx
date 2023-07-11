@@ -29,7 +29,7 @@ export const ServiceCard: React.FC<Props> = ({ title, subtitle, body }) => {
         backdropFilter={"blur(25px)"}
         textAlign={"left"}
         gap={["0.5rem", "1rem", "1.5rem", "2rem"]}
-        width={["90vw", "85vw", "80vw", "75vw", "70vw", "65vw"]}
+        width={["85vw", "80vw", "75vw", "70vw", "65vw", "60vw"]}
         color={"white"}
       >
         <CardHeader
@@ -43,22 +43,15 @@ export const ServiceCard: React.FC<Props> = ({ title, subtitle, body }) => {
                 "1.5rem",
                 "1.8rem",
                 "2.1rem",
-                "2.4rem",
-                "2.7rem",
-                "3rem",
+                "2.2rem",
+                "2.3rem",
+                "2.5rem",
               ]}
             />
           </Center>
 
           <Heading
-            fontSize={[
-              "1.5rem",
-              "1.7rem",
-              "1.9rem",
-              "2.1rem",
-              "2.3rem",
-              "2.5rem",
-            ]}
+            fontSize={["1.5rem", "1.5rem", "1.5rem", "2rem", "2rem", "2rem"]}
             fontWeight={700}
           >
             {title}
@@ -74,12 +67,12 @@ export const ServiceCard: React.FC<Props> = ({ title, subtitle, body }) => {
           >
             <Heading
               fontSize={[
-                "1.25rem",
+                "1.15rem",
                 "1.3rem",
                 "1.35rem",
                 "1.4rem",
                 "1.45rem",
-                "1.5rem",
+                "1.25rem",
               ]}
               fontFamily={"Lora"}
               fontWeight={600}
@@ -87,14 +80,7 @@ export const ServiceCard: React.FC<Props> = ({ title, subtitle, body }) => {
               {subtitle}
             </Heading>
             <Text
-              fontSize={[
-                "1rem",
-                "1.25rem",
-                "1.3rem",
-                "1.25rem",
-                "1.25rem",
-                "1.3rem",
-              ]}
+              fontSize={["1rem", "1.25rem", "1.3rem", "1.1rem", "1rem", "1rem"]}
             >
               {body}
             </Text>

@@ -21,7 +21,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <ServiceCardSelector />
+      <Box display={["none", "none", "none", "block", "block", "block"]}>
+        <ServiceCardSelector />
+      </Box>
+      <Box display={["block", "block", "block", "none", "none", "none"]}>
+        <ServiceCarousel />
+      </Box>
 
       <ProyectGrid />
 

@@ -31,15 +31,18 @@ export default class ServiceCardSelector extends Component {
                   <Tab
                     key={key}
                     textColor={"white"}
-                    _selected={{ bg: "rgba(15, 48, 67)" }}
-                    fontSize={[
-                      "0.9rem",
-                      "1rem",
-                      "1.25rem",
-                      "1.25rem",
-                      "1.25rem",
-                      "1.25rem",
-                    ]}
+                    _hover={{
+                      backgroundColor: "rgba(15, 48, 67)",
+                      color: "white",
+                      transition: "ease-in-out",
+                      transitionDuration: "0.1s",
+                    }}
+                    _selected={{
+                      bg: "rgba(242, 149, 105)",
+                      transition: "ease-in-out",
+                      transitionDuration: "0.1s",
+                    }}
+                    fontSize={"1rem"}
                   >
                     {item.title}
                   </Tab>

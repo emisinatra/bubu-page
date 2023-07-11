@@ -40,8 +40,8 @@ export const ProyectCard: React.FC<Props> = ({
         backdropFilter={"blur(25px)"}
         textAlign={"left"}
         color={"white"}
-        width={["20rem", "30rem", "30rem", "35rem", "35rem", "35rem"]}
-        height={["20rem", "25rem", "25rem", "20rem", "20rem", "22.5rem"]}
+        width={["80vw", "75svw", "60vw", "50vw", "40vw", "35vw"]}
+        height={["45vh", "45vh", "45vh", "35vh", "32.5vh", "30vh"]}
       >
         <Link href={redirectUrl} isExternal>
           <Circle
@@ -51,12 +51,14 @@ export const ProyectCard: React.FC<Props> = ({
             position={"absolute"}
             top={0}
             right={0}
-            margin={["1.5rem", "2rem", "2rem", "2rem", "2rem", "2rem"]}
+            margin={["3vh", "3vh", "3vh", "2.5vh", "2.5vh", "2.5vh"]}
             size={["4rem", "5rem", "5rem", "4rem", "4.25rem", "4.5rem"]}
             cursor={"pointer"}
             _hover={{
               backgroundColor: "rgba(22, 25, 27,0.75)",
               color: "white",
+              transition: "ease-in-out",
+              transitionDuration: "0.1s",
             }}
           >
             <CustomArrow
@@ -80,27 +82,14 @@ export const ProyectCard: React.FC<Props> = ({
           padding={"0"}
           marginRight={["2.5rem", "3rem", "2rem", "3.5rem", "3rem"]}
         >
-          <Heading
-            fontSize={["1.5rem", "2rem", "2.5rem", "2rem", "2.25rem", "2.5rem"]}
-            fontWeight={700}
-          >
+          <Heading fontSize={"1.5rem"} fontWeight={700}>
             {title}
           </Heading>
         </CardHeader>
 
-        <CardBody padding={"0"} display={"flex"} paddingTop={"1rem"}>
+        <CardBody padding={"0"} display={"flex"} paddingTop={"2vh"}>
           <Stack justifyContent={"space-between"}>
-            <Text
-              fontSize={[
-                "1rem",
-                "1.25rem",
-                "1.3rem",
-                "1.25rem",
-                "1.25rem",
-                "1.3rem",
-              ]}
-              fontWeight={400}
-            >
+            <Text fontSize={"1rem"} fontWeight={400}>
               {subtitle}
             </Text>
             <Stack
@@ -127,20 +116,11 @@ export const ProyectCard: React.FC<Props> = ({
                     _hover={{
                       backgroundColor: "rgba(22, 25, 27, 0.5)",
                       color: "white",
+                      transition: "ease-in-out",
+                      transitionDuration: "0.1s",
                     }}
                   >
-                    <Text
-                      fontSize={[
-                        "1rem",
-                        "1.2rem",
-                        "1.15rem",
-                        "1.2rem",
-                        "1.15rem",
-                        "1.1rem",
-                      ]}
-                    >
-                      {item}
-                    </Text>
+                    <Text fontSize={"0.8rem"}>{item}</Text>
                   </Center>
                 );
               })}

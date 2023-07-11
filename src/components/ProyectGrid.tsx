@@ -4,10 +4,10 @@ import { ProyectCardInfo } from "@/utils/ProyectCardInfo";
 
 export const ProyectGrid = () => {
   return (
-    <Center margin={["2rem", "3.5rem", "5rem", "7rem", "10rem"]}>
+    <Center margin={["2vw", "4vw", "6vw", "8vw", "10vw"]}>
       <SimpleGrid
         columns={[1, 1, 1, 2, 2, 2]}
-        gap={["2rem", "3rem", "3rem", "2rem", "4rem", "5rem"]}
+        gap={["4vh", "3vh", "3vw", "4vw", "4vw", "5vw"]}
       >
         {ProyectCardInfo.map((item, key) => {
           return (
