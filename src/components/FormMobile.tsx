@@ -10,6 +10,8 @@ import {
   Center,
 } from "@chakra-ui/react";
 import axios from "axios";
+import FormSender from "./Form/FormSender";
+import { Zoom } from "react-toastify";
 
 const FormMobile = () => {
   // estado para almacenar los datos del formulario
@@ -20,6 +22,15 @@ const FormMobile = () => {
     email: "",
   });
 
+  const [isDisabled, setDisabled] = useState(false);
+
+  // maneja el estado del boton submit para evitar spam. Se deshabilita por 20 segundos
+  const handleClick = () => {
+    setDisabled(true);
+    setTimeout(() => {
+      setDisabled(false);
+    }, 20000);
+  };
   // funcion para manejar los cambios en los campos del formulario
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -65,7 +76,6 @@ const FormMobile = () => {
       fontWeight={600}
       fontSize={"1.5rem"}
       marginX={"auto"}
-      marginTop={5}
     >
       <form onSubmit={handleSubmit}>
         <FormControl>
@@ -78,6 +88,8 @@ const FormMobile = () => {
                 placeholder="TU NOMBRE COMPLETO"
                 variant="flushed"
                 name="nombre"
+                fontSize={"0.9rem"}
+                textAlign={"center"}
                 value={formData.nombre}
                 onChange={handleChange}
               ></Input>
@@ -90,6 +102,8 @@ const FormMobile = () => {
                 placeholder="TU NEGOCIO"
                 variant="flushed"
                 name="negocio"
+                fontSize={"0.9rem"}
+                textAlign={"center"}
                 value={formData.negocio}
                 onChange={handleChange}
               ></Input>
@@ -105,6 +119,8 @@ const FormMobile = () => {
                 placeholder="DISEÑO WEB"
                 variant="flushed"
                 name="servicio"
+                fontSize={"0.9rem"}
+                textAlign={"center"}
                 value={formData.servicio}
                 onChange={handleChange}
               ></Input>
@@ -120,17 +136,22 @@ const FormMobile = () => {
                 placeholder="TU EMAIL"
                 variant="flushed"
                 name="email"
+                fontSize={"0.9rem"}
+                textAlign={"center"}
                 value={formData.email}
                 onChange={handleChange}
+                mr={2}
               ></Input>
+            </WrapItem>
+            <WrapItem>
+              <Text>.</Text>
             </WrapItem>
           </Wrap>
 
-          <Box display={"flex"} justifyContent={"center"} alignItems={"center"}>
-            <Button type="submit" mt={5}>
-              enviar información
-            </Button>
-          </Box>
+          <FormSender
+            handleClick={handleClick}
+            isDisabled={isDisabled}
+          ></FormSender>
         </FormControl>
       </form>
     </Center>

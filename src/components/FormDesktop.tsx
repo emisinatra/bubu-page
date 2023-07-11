@@ -1,7 +1,6 @@
 import { useState, ChangeEvent, FormEvent } from "react";
 import {
   Box,
-  Button,
   Wrap,
   FormControl,
   Input,
@@ -9,6 +8,7 @@ import {
   WrapItem,
 } from "@chakra-ui/react";
 import axios from "axios";
+import FormSender from "./Form/FormSender";
 
 const FormDesktop = () => {
   // estado para almacenar los datos del formulario
@@ -18,6 +18,16 @@ const FormDesktop = () => {
     servicio: "",
     email: "",
   });
+
+  const [isDisabled, setDisabled] = useState(false);
+
+  // maneja el estado del boton submit para evitar spam. Se deshabilita por 20 segundos
+  const handleClick = () => {
+    setDisabled(true);
+    setTimeout(() => {
+      setDisabled(false);
+    }, 20000);
+  };
 
   // funcion para manejar los cambios en los campos del formulario
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -66,6 +76,7 @@ const FormDesktop = () => {
       position={"absolute"}
       top={["32", "32", "20", "20", "0"]}
       right={["-10%", "-15%", "-15%"]}
+      zIndex={1}
     >
       <form onSubmit={handleSubmit}>
         <FormControl>
@@ -78,6 +89,8 @@ const FormDesktop = () => {
                 placeholder="TU NOMBRE COMPLETO"
                 variant="flushed"
                 name="nombre"
+                fontSize={"0.9rem"}
+                textAlign={"center"}
                 value={formData.nombre}
                 onChange={handleChange}
               ></Input>
@@ -90,6 +103,8 @@ const FormDesktop = () => {
                 placeholder="TU NEGOCIO"
                 variant="flushed"
                 name="negocio"
+                fontSize={"0.9rem"}
+                textAlign={"center"}
                 value={formData.negocio}
                 onChange={handleChange}
               ></Input>
@@ -105,6 +120,8 @@ const FormDesktop = () => {
                 placeholder="DISEÑO WEB"
                 variant="flushed"
                 name="servicio"
+                fontSize={"0.9rem"}
+                textAlign={"center"}
                 value={formData.servicio}
                 onChange={handleChange}
               ></Input>
@@ -120,17 +137,21 @@ const FormDesktop = () => {
                 placeholder="TU EMAIL"
                 variant="flushed"
                 name="email"
+                fontSize={"0.9rem"}
+                textAlign={"center"}
                 value={formData.email}
                 onChange={handleChange}
+                mr={2}
               ></Input>
+
+              <Text>.</Text>
             </WrapItem>
           </Wrap>
 
-          <Box display={"flex"} justifyContent={"center"} alignItems={"center"}>
-            <Button type="submit" mt={5}>
-              enviar información
-            </Button>
-          </Box>
+          <FormSender
+            handleClick={handleClick}
+            isDisabled={isDisabled}
+          ></FormSender>
         </FormControl>
       </form>
     </Box>

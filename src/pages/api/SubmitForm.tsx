@@ -15,22 +15,18 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         port: 465,
         secure: true,
         auth: {
-          user: "bubusmartsolutions@gmail.com",
-          pass: "lamagicasexta666",
+          user: "bubuemailsender@gmail.com",
+          pass: "ljplocahymdqvjvw",
         },
       });
 
       // configuracion del mail para enviar
       const mailOptions = {
-        from: "bubusmartsolutions@gmail.com",
+        from: "bubuemailsender@gmail.com",
         to: "info@bubu.solutions",
         subject: "Nuevo mensaje desde la página",
-        text: `
-          Nombre: ${nombre}
-          Negocio: ${negocio}
-          Servicio: ${servicio}
-          Email: ${email}
-        `,
+        //plantilla para email automatico
+        text: `${nombre} del negocio ${negocio} necesita ayuda con ${servicio}.\nSu email es ${email}`,
       };
 
       // envia el mail

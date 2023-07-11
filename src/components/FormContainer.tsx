@@ -5,28 +5,21 @@ const FormContainer = () => {
   return (
     <Box position={"relative"} mt={5}>
       {/* Texto del formulario */}
-      <Stack>
-        <HStack
-          textColor={"white"}
-          fontWeight={"bold"}
-          fontSize={["4xl", "5xl", "6xl", "6xl", "7xl"]}
-          px={"10"}
-          pb={"10"}
-          position={"absolute"}
-          zIndex={"1"}
-        >
-          <Text>comencemos</Text>
-          <Text textColor={"primary.500"}>.</Text>
-        </HStack>
-        <Text
-          position={"relative"}
-          mt={["12", "16", "20", "20", "24"]}
-          px={10}
-          fontSize={"large"}
-        >
-          formulario básico
-        </Text>
-      </Stack>
+
+      <HStack
+        textColor={"white"}
+        fontWeight={"bold"}
+        fontSize={["4xl", "5xl", "6xl", "6xl", "7xl"]}
+        px={"10"}
+        pb={"10"}
+        position={["relative", "relative", "relative", "absolute", "absolute"]}
+        top={["0", "0", "0", "10", "10", "10"]}
+        zIndex={9999}
+        mb={["0", "0", "0", "20", "24"]}
+      >
+        <Text>comencemos</Text>
+        <Text textColor={"primary.500"}>.</Text>
+      </HStack>
 
       {/* Formulario desktop*/}
       <FormDesktop />
