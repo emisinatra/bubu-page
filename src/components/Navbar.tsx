@@ -12,7 +12,7 @@ import {
   IconButton,
   Flex,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import NavbarMobile from "./NavbarMobile";
 
 const Navbar: React.FC = () => {
@@ -55,7 +55,7 @@ const Navbar: React.FC = () => {
         <BreadcrumbItem>
           <HStack spacing={["0.5rem", "2rem"]}>
             <BreadcrumbLink href="#">Conócenos</BreadcrumbLink>
-            <BreadcrumbLink href="#">Servicios</BreadcrumbLink>
+            <BreadcrumbLink href="#services">Servicios</BreadcrumbLink>
             <BreadcrumbLink href="#">Proyectos</BreadcrumbLink>
           </HStack>
         </BreadcrumbItem>
@@ -117,7 +117,7 @@ const Navbar: React.FC = () => {
             onClick={() => changeDisplay("none")}
           />
         </Flex>
-        <NavbarMobile />
+        <NavbarMobile funcOnClick={() => changeDisplay("none")}/>
       </Flex>
     </Flex>
   );

@@ -18,7 +18,7 @@ interface Props {
 
 export const ServiceCard: React.FC<Props> = ({ title, subtitle, body }) => {
   return (
-    <Center>
+    <Center id="services">
       <Card
         padding={["2rem", "3rem", "4rem"]}
         display={"flex"}

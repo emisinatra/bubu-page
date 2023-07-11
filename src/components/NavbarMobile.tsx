@@ -9,29 +9,34 @@ import {
   Image,
   VStack,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
 
-const NavbarMobile = () => {
+interface Props {
+  funcOnClick: () => void;
+}
+
+const NavbarMobile: React.FC<Props> = ({funcOnClick}) => {
+  const [display, changeDisplay] = useState("flex");
   return (
     <VStack zIndex={20}>
       <Breadcrumb separator={""} fontSize={"8px"} maxW={["full"]}>
-        <VStack>
-          <Button>
+        <VStack >
+          <Button onClick={funcOnClick}>
             <BreadcrumbItem>
               <BreadcrumbLink href="#">Conócenos</BreadcrumbLink>
             </BreadcrumbItem>
           </Button>
-          <Button>
+          <Button onClick={funcOnClick}>
             <BreadcrumbItem>
-              <BreadcrumbLink href="#">Servicios</BreadcrumbLink>
+              <BreadcrumbLink href="#services">Servicios</BreadcrumbLink>
             </BreadcrumbItem>
           </Button>
-          <Button>
+          <Button onClick={funcOnClick}>
             <BreadcrumbItem>
               <BreadcrumbLink href="#">Proyectos</BreadcrumbLink>
             </BreadcrumbItem>
           </Button>
-          <Button>
+          <Button onClick={funcOnClick}>
             <BreadcrumbItem>
               <BreadcrumbLink href="#">Contacto</BreadcrumbLink>
             </BreadcrumbItem>
