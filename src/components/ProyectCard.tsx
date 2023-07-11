@@ -114,7 +114,7 @@ export const ProyectCard: React.FC<Props> = ({
                     borderRadius={"2rem"}
                     key={key}
                     _hover={{
-                      backgroundColor: "rgba(22, 25, 27, 0.5)",
+                      backgroundColor: "rgba(242, 149, 105)",
                       color: "white",
                       transition: "ease-in-out",
                       transitionDuration: "0.1s",
