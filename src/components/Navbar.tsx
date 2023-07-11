@@ -109,12 +109,15 @@ const Navbar: React.FC = () => {
       >
         <Flex justify={"flex-end"}>
           <IconButton
-            mt={2}
-            mr={2}
+            mt={5}
+            mr={5}
             aria-label="Close Menu"
-            size={"md"}
+            size={"sm"}
+            shadow={"lg"}
             icon={<CloseIcon />}
             onClick={() => changeDisplay("none")}
+            colorScheme="white"
+            backgroundColor={"secondary.300"}
           />
         </Flex>
         <NavbarMobile funcOnClick={() => changeDisplay("none")}/>
