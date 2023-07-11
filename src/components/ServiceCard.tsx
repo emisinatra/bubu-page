@@ -7,10 +7,8 @@ import {
   Heading,
   Stack,
   StackDivider,
-  Icon,
   Center,
 } from "@chakra-ui/react";
-import { useState } from "react";
 interface Props {
   title: string;
   subtitle: string;
