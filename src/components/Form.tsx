@@ -1,19 +1,16 @@
 import { useState, ChangeEvent, FormEvent } from "react";
 import {
   Box,
-  Button,
   Wrap,
   FormControl,
   Input,
   Text,
   WrapItem,
-  Center,
 } from "@chakra-ui/react";
 import axios from "axios";
-import FormSender from "./Form/FormSender";
-import { Zoom } from "react-toastify";
+import FormSender from "./FormSender";
 
-const FormMobile = () => {
+const Form = () => {
   // estado para almacenar los datos del formulario
   const [formData, setFormData] = useState({
     nombre: "",
@@ -31,6 +28,7 @@ const FormMobile = () => {
       setDisabled(false);
     }, 20000);
   };
+
   // funcion para manejar los cambios en los campos del formulario
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -62,24 +60,35 @@ const FormMobile = () => {
   };
 
   return (
-    <Center
+    <Box
       background={"rgba(22, 25, 27, 0.50)"}
       backdropFilter={"blur(25px)"}
       borderRadius={54}
-      width={["80vw", "70vw", "80vw"]}
+      width={"80vw"}
       py={[10, 10, 10, 10, 20]}
       px={20}
       minH={300}
-      display={["flex", "flex", "flex", "none", "none", "none"]}
+      display={"flex"}
       justifyContent={"center"}
       alignItems={"center"}
       fontWeight={600}
       fontSize={"1.5rem"}
       marginX={"auto"}
+      position={[
+        "static",
+        "static",
+        "static",
+        "absolute",
+        "absolute",
+        "absolute",
+      ]}
+      top={["32", "32", "20", "20", "0", "0"]}
+      right={["0", "0", "0", "-10%", "-15%", "-15%"]}
+      zIndex={1}
     >
       <form onSubmit={handleSubmit}>
         <FormControl>
-          <Wrap maxW={["80vw", "50vw", "50vw"]}>
+          <Wrap maxW={"50vw"}>
             <WrapItem>
               <Text>Mi nombre es </Text>
             </WrapItem>
@@ -142,8 +151,7 @@ const FormMobile = () => {
                 onChange={handleChange}
                 mr={2}
               ></Input>
-            </WrapItem>
-            <WrapItem>
+
               <Text>.</Text>
             </WrapItem>
           </Wrap>
@@ -154,8 +162,8 @@ const FormMobile = () => {
           ></FormSender>
         </FormControl>
       </form>
-    </Center>
+    </Box>
   );
 };
 
-export default FormMobile;
+export default Form;

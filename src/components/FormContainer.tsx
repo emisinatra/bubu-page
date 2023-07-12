@@ -1,5 +1,4 @@
-import FormDesktop from "./FormDesktop";
-import FormMobile from "./FormMobile";
+import Form from "./Form";
 import { Box, HStack, Text, Stack } from "@chakra-ui/react";
 const FormContainer = () => {
   return (
@@ -22,9 +21,7 @@ const FormContainer = () => {
       </HStack>
 
       {/* Formulario desktop*/}
-      <FormDesktop />
-      {/* Formulario Mobile */}
-      <FormMobile />
+      <Form />
     </Box>
   );
 };
