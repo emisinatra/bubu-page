@@ -39,6 +39,7 @@ const Body = () => {
         <TextSeccion text="clientes" />
         <ClientCarousel />
       </Box>
+      </Box>
       <Box ml={"-15%"} mt={"-15%"} zIndex={"-1"}>
         <SingleImage />
       </Box>
