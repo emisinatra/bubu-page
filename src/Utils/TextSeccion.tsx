@@ -4,7 +4,7 @@ import React from "react";
 type TextSeccionProps = {
   text: string;
 };
-const TextSeccion: React.FC<TextSeccionProps> = ({text}) => {
+const TextSeccion: React.FC<TextSeccionProps> = ({ text }) => {
   return (
     <HStack
       textColor={"white"}
