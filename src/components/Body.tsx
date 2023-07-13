@@ -15,6 +15,7 @@ import ImagesBody from "../Utils/ImagesBody";
 import ServiceCarousel from "./ServiceCarousel";
 import TextSeccion from "@/Utils/TextSeccion";
 import SingleImage from "@/Utils/SingleImage";
+import FormContainer from "./FormContainer";
 import { ClientCarousel } from "./ClientCarousel";
 
 const Body = () => {
@@ -30,6 +31,10 @@ const Body = () => {
         <TextSeccion text="servicios" />
         <ServiceCarousel />
       </Box>
+      <Box>
+        <FormContainer />
+      </Box>
+      <Box ml={"-15%"} mt={"10%"} zIndex={"-1"}>
       <Box mt={"10vh"} overflow={"hidden"} pb={"5rem"} zIndex={"9"}>
         <TextSeccion text="clientes" />
         <ClientCarousel />
