@@ -27,7 +27,6 @@ const Body = () => {
         <Box>
           <TextBody />
         </Box>
-      </Box>
       <Box mt={"20vh"} overflow={"hidden"} pb={"5rem"} zIndex={"9"}>
         <TextSeccion text="servicios" />
         <ServiceCarousel />
@@ -42,6 +41,7 @@ const Body = () => {
       <Box ml={"-15%"} mt={"-15%"} zIndex={"-1"}>
         <SingleImage />
       </Box>
+     </Box>
     </Grid>
   );
 };
