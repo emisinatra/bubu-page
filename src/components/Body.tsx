@@ -27,21 +27,21 @@ const Body = () => {
         <Box>
           <TextBody />
         </Box>
+      </Box>
       <Box mt={"20vh"} overflow={"hidden"} pb={"5rem"} zIndex={"9"}>
         <TextSeccion text="servicios" />
         <ServiceCarousel />
-      </Box>
-      <Box>
-        <FormContainer />
       </Box>
       <Box mt={"10vh"} overflow={"hidden"} pb={"5rem"} zIndex={"9"}>
         <TextSeccion text="clientes" />
         <ClientCarousel />
       </Box>
-      <Box ml={"-15%"} mt={"-15%"} zIndex={"-1"}>
+      <Box>
+      <FormContainer />
+      </Box>
+      <Box ml={"-15%"} overflow={"hidden"} mt={"-15%"} zIndex={"-1"} >
         <SingleImage />
       </Box>
-     </Box>
     </Grid>
   );
 };
