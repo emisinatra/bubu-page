@@ -19,6 +19,7 @@ import FormContainer from "./FormContainer";
 import { ClientCarousel } from "./ClientCarousel";
 
 const Body = () => {
+   //<Box ml={"-15%"} mt={"10%"} zIndex={"-1"}> </Box>
   return (
     <Grid>
       <Box>
@@ -34,11 +35,9 @@ const Body = () => {
       <Box>
         <FormContainer />
       </Box>
-      <Box ml={"-15%"} mt={"10%"} zIndex={"-1"}>
       <Box mt={"10vh"} overflow={"hidden"} pb={"5rem"} zIndex={"9"}>
         <TextSeccion text="clientes" />
         <ClientCarousel />
-      </Box>
       </Box>
       <Box ml={"-15%"} mt={"-15%"} zIndex={"-1"}>
         <SingleImage />
