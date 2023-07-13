@@ -1,25 +1,27 @@
-import { Box, Stack, Text, Image, HStack } from "@chakra-ui/react";
+import { ExternalLinkIcon } from "@chakra-ui/icons";
+import { Box, Stack, Text, Image, HStack, Link } from "@chakra-ui/react";
 import React from "react";
+
+
 
 const TextBody = () => {
   return (
     <Box
-      paddingX={"20"}
-      mt={["10%", "24%", "24%", "24%", "24%"]}
-      zIndex={"9999"}
-      left={20}
+      paddingX={["10","20"]}
+      mt={["6%", "6%", "8%", "8%", "10%"]}
+      zIndex={10}
       textColor={"white"}
       fontWeight={"bold"}
-      fontSize={["4xl", "5xl", "6xl", "7xl", "8xl"]}
+      fontSize={["4xl", "5xl", "6xl", "7xl", "80px"]}
     >
       <Box>
-        <Stack direction={["column", "row"]}>
-          <Text mb={["-30px", "0"]}>CREATING </Text>
+        <Stack direction={["column", "row"]} spacing={["0","2rem"]} >
+          <Text mb={["-1.2rem","0"]} >CREATING </Text>
           <Text>BONDS</Text>
         </Stack>
         <Stack direction={"row"}>
-          <Stack direction={["column", "row"]}>
-            <Text mb={["-30px", "0"]}>JOINING </Text>
+          <Stack direction={["column", "row"]} spacing={["0","2rem"]}>
+            <Text mb={["-1.2rem", "0"]}>JOINING </Text>
             <HStack>
               <Text>PEOPLE</Text>
               <Text textColor={"primary.500"}>.</Text>
@@ -27,7 +29,7 @@ const TextBody = () => {
           </Stack>
         </Stack>
       </Box>
-      <Stack maxW={[200, 450, 573, 688, 917]} textAlign={"left"}>
+      <Stack maxW={[250, 450, 573, 688, 800]} textAlign={"left"}>
         <Text
           fontWeight={"300"}
           fontSize={[10, 13, 13, 14, 18]}
@@ -43,9 +45,9 @@ const TextBody = () => {
       </Stack>
       <Stack direction={"row"} alignItems={"center"}>
         <Image src="/diseño01.png" boxSize={50} objectFit={"cover"} />
-        <Text fontSize={[10, 13, 14, 18, 20]} fontWeight={"bold"}>
-          Charlemos...
-        </Text>
+        <Link fontSize={[10, 13, 14, 18, 20]} fontWeight={"bold"} href="https://api.whatsapp.com/send?phone=542617166509&text=Hola%20buenos%20dias!%20Me%20gustaria%20saber%20sobre%20su%20servicio%20de%3A%20" isExternal>
+          Charlemos... <ExternalLinkIcon mx={"2px"}/> 
+        </Link>
       </Stack>
     </Box>
   );

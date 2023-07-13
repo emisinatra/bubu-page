@@ -5,6 +5,7 @@ import { pageview } from "../analytics"; // Importo la funcion de seguimiento de
 import Navbar from "../components/Navbar";
 import Body from "@/components/Body";
 import { Container, Stack, Image, Box } from "@chakra-ui/react";
+import NavbarMobile from "@/components/NavbarMobile";
 
 // Defino el componente Home
 export default function Home() {
@@ -12,7 +13,7 @@ export default function Home() {
     <Container
       backgroundColor={"secondary.700"}
       height="100%"
-      width={["md", "full"]}
+      width={["full"]}
       overflowX={"hidden"}
       maxWidth={"100%"}
       textColor={"white"}
